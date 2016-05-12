@@ -1,9 +1,11 @@
-package io.ruck.maven.gocd.plugin;
+package de.pkdevel.gocd.plugin.maven;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
+
+import de.pkdevel.gocd.plugin.maven.StringUtils;
 
 public final class StringUtilsTest {
 	

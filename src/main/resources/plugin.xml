@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <go-plugin id="maven-task" version="1">
 	<about>
-		<name>Maven plugin</name>
+		<name>Maven task plugin</name>
+		<description>Maven task plugin for GoCD</description>
 		<version>${project.version}</version>
 		<target-go-version>14.1</target-go-version>
-		<description>Maven Go plugin</description>
 		<vendor>
-			<name>ruckc</name>
-			<url>https://github.com/ruckc</url>
+			<name>Philipp Kolb</name>
+			<url>https://github.com/pkdevel</url>
 		</vendor>
 		<target-os>
 			<value>Linux</value>

@@ -1,4 +1,4 @@
-package io.ruck.maven.gocd.plugin;
+package de.pkdevel.gocd.plugin.maven;
 
 public class StringUtils {
 	

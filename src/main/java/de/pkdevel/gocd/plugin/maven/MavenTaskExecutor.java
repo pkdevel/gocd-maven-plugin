@@ -1,4 +1,4 @@
-package io.ruck.maven.gocd.plugin;
+package de.pkdevel.gocd.plugin.maven;
 
 import java.io.File;
 import java.io.PrintWriter;
@@ -39,13 +39,13 @@ public final class MavenTaskExecutor implements TaskExecutor {
 				return ExecutionResult.failure("Build failure");
 			}
 		}
-		catch (final Exception t) {
-			console.printLine(t.getMessage());
+		catch (final Exception e) {
+			console.printLine(e.getMessage());
 			final StringWriter sw = new StringWriter();
 			final PrintWriter pw = new PrintWriter(sw);
-			t.printStackTrace(pw);
+			e.printStackTrace(pw);
 			console.printLine(sw.toString());
-			return ExecutionResult.failure("Build failure: " + t.getMessage(), t);
+			return ExecutionResult.failure("Build failure: " + e.getMessage(), e);
 		}
 		
 		return ExecutionResult.success("Build success");
@@ -78,7 +78,7 @@ public final class MavenTaskExecutor implements TaskExecutor {
 			command.add(tc.getValue(MavenTask.PROFILES_KEY));
 		}
 		
-		command.addAll(Arrays.asList(tc.getValue(MavenTask.ARGUMENTS_KEY).split("\\s+")));
+		command.addAll(Arrays.asList(tc.getValue(MavenTask.GOALS_KEY).split("\\s+")));
 		
 		LOGGER.debug("Building command: " + command);
 		
